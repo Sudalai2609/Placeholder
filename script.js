@@ -33,19 +33,10 @@ function animateParticles() {
 
     requestAnimationFrame(animateParticles);
 }
-enterBox.addEventListener('click', () => {
-    document.body.style.transition = "opacity 0.8s ease";
-    document.body.style.opacity = 0;
-    setTimeout(() => {
-        window.location.href = "page2.html";
-    }, 800);
-});
 document.addEventListener("DOMContentLoaded", () => {
-    const enterBox = document.getElementById('enter-box');
-
-    enterBox.addEventListener('click', () => {
-        // Redirect to page 2
-        window.location.href = "index2.html"; // make sure this is the correct name of Page 2
+    const enterBox = document.getElementById("enter-box");
+    enterBox.addEventListener("click", () => {
+        window.location.href = "index2.html"; // redirect to page 2
     });
 });
 
