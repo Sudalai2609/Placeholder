@@ -80,22 +80,3 @@ window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
-// Cloud references
-const clouds = [
-  document.getElementById('cloud1'),
-  document.getElementById('cloud2'),
-  document.getElementById('cloud3')
-];
-
-// Redirect URLs for each cloud
-const cloudLinks = [
-  'cloud1.html',  // Cloud 1
-  'cloud2.html',  // Cloud 2
-  'cloud3.html'   // Cloud 3
-];
-
-clouds.forEach((cloud, i) => {
-  cloud.addEventListener('click', () => {
-    window.location.href = cloudLinks[i]; // redirect on click
-  });
-});
