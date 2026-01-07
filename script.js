@@ -41,7 +41,7 @@ enterBox.addEventListener('click', () => {
     }, 800);
 });
 document.addEventListener("DOMContentLoaded", () => {
-    const enterBox = document.getElementById('enterBox');
+    const enterBox = document.getElementById('enter-box');
 
     enterBox.addEventListener('click', () => {
         // Redirect to page 2
