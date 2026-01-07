@@ -4,9 +4,6 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const particles = [];
-const particleCount = 100;
-
 class Particle {
   constructor() {
     this.reset();
@@ -14,9 +11,9 @@ class Particle {
   reset() {
     this.x = Math.random() * canvas.width;
     this.y = canvas.height + Math.random() * 200;
-    this.size = 2 + Math.random() * 3;
-    this.speed = 0.5 + Math.random();
-    this.opacity = 0.1 + Math.random() * 0.3;
+    this.size = 3 + Math.random() * 4; 
+    this.speed = 0.5 + Math.random() * 1;
+    this.opacity = 0.2 + Math.random() * 0.3;
   }
   update() {
     this.y -= this.speed;
@@ -30,11 +27,13 @@ class Particle {
   }
 }
 
-for(let i = 0; i < particleCount; i++) {
+const particles = [];
+const particleCount = 100;
+for(let i=0; i<particleCount; i++){
   particles.push(new Particle());
 }
 
-function animateParticles() {
+function animateParticles(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   particles.forEach(p => {
     p.update();
@@ -52,25 +51,34 @@ const clouds = [
   document.getElementById('cloud3')
 ];
 
-// initial positions
-const cloudPositions = [ -300, -600, -900 ];
-
+// Initial horizontal positions
+const cloudPositions = [-300, -600, -900];
 clouds.forEach((cloud, i) => {
   cloud.style.left = cloudPositions[i] + 'px';
-  cloud.style.top = (i * 120) + 'px';
+  cloud.style.top = (i*150 + 100) + 'px';
+  // Click events redirect to pages
   cloud.addEventListener('click', () => {
-    alert(`Cloud ${i+1} clicked! Redirect to desired page.`);
+    window.location.href = `cloud${i+1}.html`;
   });
 });
 
-function moveClouds() {
+function moveClouds(){
   clouds.forEach((cloud, i) => {
     let left = parseFloat(cloud.style.left);
-    left += 0.5 + Math.random()*0.3; // drift speed
-    if(left > window.innerWidth + 300) left = -300; // reset
+    left += 0.3 + Math.random()*0.5; // drift speed
+    if(left > window.innerWidth + 300) left = -300;
     cloud.style.left = left + 'px';
   });
   requestAnimationFrame(moveClouds);
+}
+
+moveClouds();
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});  requestAnimationFrame(moveClouds);
 }
 
 moveClouds();
