@@ -88,6 +88,13 @@ body {
     height: 100%;
     z-index: 5;
 }
+.enter-box {
+  cursor: pointer;
+}
+.enter-box:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
 
 /* Particles */
 .particle {
