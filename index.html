@@ -13,5 +13,15 @@
 <div class="enter-box"><h1>Step Inside! 🌺</h1></div>
 
 <script src="script.js"></script>
+  <script>
+  const enterBox = document.getElementById('enterBox');
+  if(enterBox) {
+    enterBox.addEventListener('click', () => {
+      window.location.href = "index2.html"; // make sure this file exists
+    });
+  } else {
+    console.error("Enter box not found!");
+  }
+  </script>
 </body>
 </html>
