@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>💌</title>
+<title>💌 Letter</title>
 <link rel="stylesheet" href="cloud1.css">
 </head>
 <body>
 
-<div class="envelope" id="envelope">💌</div>
+<div class="envelope-container">
+  <!-- Paper that appears after opening -->
+  <div class="paper" id="paper">
+    <!-- Add your text here -->
+  </div>
 
-<div class="letter hidden" id="letter">
-  <div class="paper">
-    <p>
-      Dear you,<br><br>
-      If you’re reading this,<br>
-      you were meant to pause here.<br><br>
-      Breathe. Stay.
-    </p>
+  <!-- Envelope layers -->
+  <div class="envelope" id="envelope">
+    <div class="back"></div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <div class="wax"></div>
   </div>
 </div>
 
