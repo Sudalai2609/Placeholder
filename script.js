@@ -40,10 +40,13 @@ enterBox.addEventListener('click', () => {
         window.location.href = "page2.html";
     }, 800);
 });
-const enterBox = document.getElementById('enterBox');
+document.addEventListener("DOMContentLoaded", () => {
+    const enterBox = document.getElementById('enterBox');
 
-enterBox.addEventListener('click', () => {
-    window.location.href = "index2.html"; // change to the actual path of your second page
+    enterBox.addEventListener('click', () => {
+        // Redirect to page 2
+        window.location.href = "index2.html"; // make sure this is the correct name of Page 2
+    });
 });
 
 
