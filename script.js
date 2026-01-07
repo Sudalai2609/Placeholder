@@ -33,6 +33,19 @@ function animateParticles() {
 
     requestAnimationFrame(animateParticles);
 }
+enterBox.addEventListener('click', () => {
+    document.body.style.transition = "opacity 0.8s ease";
+    document.body.style.opacity = 0;
+    setTimeout(() => {
+        window.location.href = "page2.html";
+    }, 800);
+});
+const enterBox = document.getElementById('enterBox');
+
+enterBox.addEventListener('click', () => {
+    window.location.href = "index2.html"; // change to the actual path of your second page
+});
+
 
 // Staggered initial spawn
 setTimeout(spawnParticles, 1000);
@@ -41,3 +54,4 @@ setTimeout(spawnParticles, 5000);
 
 animateParticles();
 setInterval(spawnParticles, spawnInterval);
+
